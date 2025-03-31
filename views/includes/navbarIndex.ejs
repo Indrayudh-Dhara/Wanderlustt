@@ -1,0 +1,144 @@
+<style>
+    .btn-search{
+  color: white;
+  background-color: #fe424d;
+  border-radius: 50%;
+  opacity: 0.9;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  
+  }
+  .btn-search:hover{
+  color: white;
+  background-color: #fe424d;
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  }
+  .search-input{
+    border-radius: 2rem;
+    width: 22rem;
+    height: 3rem;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  }
+  .d-flex{
+    margin-left: 6rem;
+  }
+  </style>
+  
+  
+  
+  <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/listings"><b>Wanderlust</b></a>
+          </div>
+          <div class="navbar-nav ms-auto">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 search-input" type="search" placeholder="Enter Country" aria-label="Search">
+              <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="/listings/new">Airbnb your home</a>
+            <%if(!currUser){%>
+            <a class="nav-link " href="/signup"><b>Sign Up</b></a>
+            <a class="nav-link" href="/login"><b>Login</b></a>
+            <%}%>
+            <%if(currUser){%>
+            <a class="nav-link" href="/logout"><b>Logout</b></a>
+            <%}%>
+           
+          </div>
+        </div>
+      </div>
+     
+    </nav>
+    <!-- FILTERS -->
+ <div id="filters" >
+  <a href="/trending">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+  </a>
+  <a href="/rooms">
+    <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+  </a>
+  <a href="/mountains">
+    <div class="filter">
+    <div><i class="fa-solid fa-mountain"></i></div>
+    <p>Mountains</p>
+  </div>
+</a>
+  <a href="/amazing-pools">
+    <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </div>
+  </a>
+  <a href="/arctic">
+    <div class="filter">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </div>
+  </a>
+  <a href="/iconic-cities">
+    <div class="filter">
+      <div><i class="fa-solid fa-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+  </a>
+  <a href="/castles">
+    <div class="filter">
+    <div><i class="fa-brands fa-fort-awesome"></i></div>
+    <p>Castles</p>
+  </div>
+</a>
+  <a href="/farms">
+    <div class="filter">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </div>
+  </a>
+  <a href="/fishing">
+    <div class="filter">
+      <div><i class="fa-solid fa-fish"></i></div>
+      <p>Fishing</p>
+    </div> 
+  </a>
+  <a href="/domes">
+    <div class="filter">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+    </div>
+  </a>
+  <a href="/camping">
+    <div class="filter">
+      <div><i class="fa-solid fa-campground"></i></i></div>
+      <p>Camping</p>
+    </div> 
+  </a>
+    
+    
+    
+   
+  
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 0.85rem; font-weight: 600;">Display total after taxes</label>
+      </div>
+    </div>
+  </div>
+  
+   
