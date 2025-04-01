@@ -138,17 +138,15 @@
                 <div class="navbar-nav right-nav-items">
                     <a class="nav-link nav-item-compact" href="/listings/new">Airbnb your home</a>
                     <!-- Conditional rendering based on authentication -->
+                      <%if(!currUser){%>
                     <a class="nav-link nav-item-compact" href="/signup"><b>Sign Up</b></a>
                     <a class="nav-link nav-item-compact" href="/login"><b>Login</b></a>
-                    <!-- 
-                    <%if(!currUser){%>
-                        <a class="nav-link nav-item-compact" href="/signup">Sign Up</a>
-                        <a class="nav-link nav-item-compact" href="/login">Login</a>
                     <%}%>
+                  
                     <%if(currUser){%>
-                        <a class="nav-link nav-item-compact" href="/logout">Logout</a>
+                        <a class="nav-link nav-item-compact" href="/logout"><b>Logout</b></a>
                     <%}%>
-                    -->
+                  
                 </div>
             </div>
         </div>
