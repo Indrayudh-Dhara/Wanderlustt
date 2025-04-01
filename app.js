@@ -9,6 +9,7 @@ const path = require("path");
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const ExpressError = require("./utils/ExpressError.js");
+const Listing = require("./models/listing.js");
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const session = require('express-session');
@@ -109,9 +110,10 @@ app.use("/",userRouter);
 
 
 
-// app.all("*",(req,res,next)=>{
-//     next(new ExpressError(404,"Page Not Found!"));
-// });
+app.all("*", async (req,res)=>{
+        const allListings = await Listing.find({});
+        res.render("listings/index.ejs", {allListings});
+});
 
 app.use((err,req,res,next)=>{
     let {statusCode = 500 , message = " SOMETHING WENT WRONG"}= err;
