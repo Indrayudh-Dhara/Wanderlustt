@@ -20,25 +20,31 @@
   }
 }
 /* Starability Rating Responsive Fix */
+/* Starability Rating Responsive Scaling */
 .starability-result {
   display: inline-block;
-  min-width: 120px; /* Minimum width to prevent crushing */
-  max-width: 100%; /* Never exceed parent width */
-  height: auto;
-  background-size: contain; /* Scale stars proportionally */
-  font-size: clamp(12px, 2vw, 24px); /* Responsive font sizing */
-  line-height: 1.2;
-  white-space: nowrap; /* Keep stars in one line */
-  margin-bottom: 2rem;
+  transform-origin: left center; /* Scale from left side */
 }
 
-/* Adjust for very small screens */
-@media (max-width: 400px) {
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
   .starability-result {
-    min-width: 100px;
-    font-size: 12px;
+    transform: scale(0.8); /* 20% smaller */
   }
 }
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+  .starability-result {
+    transform: scale(0.6); /* 40% smaller */
+  }
+}
+@media (max-width: 396px) {
+  .starability-result {
+    transform: scale(0.4); /* 40% smaller */
+  }
+}
+
 </style>
 <script>
     const mapToken = "<%= process.env.MAP_TOKEN %>";
