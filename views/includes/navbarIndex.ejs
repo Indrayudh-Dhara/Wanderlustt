@@ -104,7 +104,30 @@
     height: 1px;
     background-color: #e0e0e0;
   }
+  /* Add this to your existing CSS */
+@media (max-width: 767px) {
+  #filters {
+    position: static; /* Removes fixed positioning */
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: auto;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Keeps items in one line */
+  }
+
+  .tax-toggle {
+    display: none !important; /* Hides the tax toggle on mobile */
+  }
+
+  /* Ensures no content goes under filters */
+  #filters + * {
+    clear: both;
+  }
 }
+}
+
     </style>
 </head>
 <body>
