@@ -7,7 +7,7 @@ body{
 .container{
     flex: 1;
 }
-.navbar {
+/* .navbar {
     height: 5rem;
     background-color: white;
 }
@@ -18,7 +18,7 @@ body{
     font-size: 2rem;
     color: #fe424d;
     padding-left: 7rem;
-}
+} */
 .nav-link{
     color: #222222 !important;
 }
@@ -161,3 +161,4 @@ body{
         display: flex;
         align-items: center;
       }
+ 

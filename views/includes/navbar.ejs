@@ -1,64 +1,155 @@
 <style>
-  .btn-search{
-color: white;
-background-color: #fe424d;
-border-radius: 50%;
-opacity: 0.9;
-width: 40px;
-height: 40px;
-margin: auto;
-
+    .navbar {
+        height: 5rem;
+        background-color: white;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    /* Brand/logo styling */
+    .navbar-brand .fa-airbnb {
+        font-size: 2rem;
+        color: #fe424d;
+        padding-left: 1rem; /* Default for mobile */
+    }
+    
+    /* Search button styling */
+    .search-btn {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fe424d;
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .search-btn:hover {
+        opacity: 1;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+    
+    .search-input-container {
+        position: relative;
+        width: 100%;
+       
+    }
+    
+    .search-input {
+        border-radius: 2rem;
+        height: 3rem;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+        padding-right: 50px; /* Space for button */
+        width: 100%;
+    }
+    
+    /* Hide Wanderlust in mobile */
+    @media (max-width: 767px) {
+        .wanderlust-item {
+            display: none !important;
+        }
+        .navbar-collapse {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    }
+    
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+        .search-container {
+            min-width: 180px;
+            width: 22vw;
+            max-width: 300px;
+        }
+        .nav-item-compact {
+            white-space: nowrap;
+        }
+        .navbar-nav {
+            padding-right: 2rem;
+        }
+        .navbar-brand .fa-airbnb {
+            padding-left: 3rem;
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .navbar-nav {
+            padding-right: 7rem;
+        }
+        .navbar-brand .fa-airbnb {
+            padding-left: 7rem;
+        }
+    }
+    @media (max-width: 767px) {
+.right-nav-items {
+display: flex;
+flex-direction: column;
 }
-.btn-search:hover{
-color: white;
-background-color: #fe424d;
-border-radius: 50%;
-opacity: 1;
-box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+.right-nav-items a:nth-child(2) {
+position: relative;
 }
-.search-input{
-  border-radius: 2rem;
-  width: 22rem;
-  height: 3rem;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+.right-nav-items a:nth-child(2)::before {
+content: "";
+position: absolute;
+top: -4px;
+left: 0;
+right: 0;
+height: 1px;
+background-color: #e0e0e0;
 }
-.d-flex{
-  margin-left: 6rem;
 }
 </style>
-
-
-
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+</head>
+<body>
+<nav class="navbar navbar-expand-md sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings"><b>Wanderlust</b></a>
+        <a class="navbar-brand" href="/listings">
+            <i class="fa-brands fa-airbnb"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav wanderlust-item">
+                <a class="nav-link" href="/listings"><b>Wanderlust</b></a>
+            </div>
+            
+            <!-- Search form with properly positioned button -->
+            <div class="d-flex flex-grow-1 mx-md-3 mx-lg-4">
+                <form class="search-container w-100" role="search">
+                    <div class="search-input-container offset-xxl-8">
+                        <input class="form-control search-input" type="search" placeholder="Search countries" aria-label="Search">
+                        <button class="search-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Right-aligned nav items -->
+            <div class="navbar-nav right-nav-items">
+                <a class="nav-link nav-item-compact" href="/listings/new">Airbnb your home</a>
+                <!-- Conditional rendering based on authentication -->
+                <a class="nav-link nav-item-compact" href="/signup"><b>Sign Up</b></a>
+                <a class="nav-link nav-item-compact" href="/login"><b>Login</b></a>
+                <!-- 
+                <%if(!currUser){%>
+                    <a class="nav-link nav-item-compact" href="/signup">Sign Up</a>
+                    <a class="nav-link nav-item-compact" href="/login">Login</a>
+                <%}%>
+                <%if(currUser){%>
+                    <a class="nav-link nav-item-compact" href="/logout">Logout</a>
+                <%}%>
+                -->
+            </div>
         </div>
-        <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 search-input" type="search" placeholder="Enter Country" aria-label="Search">
-            <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
-        </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-          <%if(!currUser){%>
-          <a class="nav-link " href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>Login</b></a>
-          <%}%>
-          <%if(currUser){%>
-          <a class="nav-link" href="/logout"><b>Logout</b></a>
-          <%}%>
-         
-        </div>
-      </div>
     </div>
-   
-  </nav>
-
- 
+</nav>
