@@ -1,4 +1,25 @@
 <% layout('/layouts/boilerplate') -%>
+<style>
+   /* Map Responsive Styles - ONLY affects the map */
+#map {
+  width: 100%; /* Full width of its container */
+  height: 50vh; /* 50% of viewport height (adjust as needed) */
+  min-height: 300px; /* Minimum height */
+  max-height: 500px; /* Maximum height */
+  margin: 1rem auto; /* Center horizontally */
+  border-radius: 8px; /* Optional: matches your card style */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: matches your card */
+}
+
+/* Optional: Adjust map container width on larger screens */
+@media (min-width: 992px) {
+  .col-3.offset-3 { /* Targets your specific map column */
+    width: 100%; 
+    margin-left: 0;
+    padding: 0 15px; /* Bootstrap default gutter */
+  }
+}
+</style>
 <script>
     const mapToken = "<%= process.env.MAP_TOKEN %>";
     const listing = <%- JSON.stringify(listing) %>;
@@ -88,7 +109,7 @@
        <% } %>
        
     </div>
-    <div class="col-3 offset-3 mb-3">
+    <div >
         <h3>Where you'll be</h3>
         <div id="map" ></div>
     </div>
