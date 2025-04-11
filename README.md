@@ -1,58 +1,59 @@
-# Wanderlust
+# 🏡 Wanderlust – Airbnb-Inspired Full-Stack Web App
 
-A  feature-rich Full Stack Airbnb Clone.
+Wanderlust is a full-stack web application inspired by Airbnb, built using the MERN stack. It allows users to explore, create, and manage listings for rental properties. The app features user authentication, image uploads, interactive maps, and a responsive UI — all designed to deliver a smooth and intuitive user experience.
 
-# 📌 Project Link ( Hosted )
-https://wanderlustt-ziz3.onrender.com (It might take few minutes to load , please be patient)
+## 🚀 Live Demo
+[🌐 Deployed on Render](https://wanderlustt-ziz3.onrender.com)
 
-# 🛠️ Technologies & Packages Used:
+> ⚠️ First-time load might take a few seconds due to Render’s free-tier cold start.
 
--MongoDB
+---
 
--Express.js.
+## 🛠️ Tech Stack
 
--Node.js.
+**Frontend:**
+- HTML, CSS, EJS (Embedded JavaScript Templates)
+- Bootstrap 5
 
--Passport.js for authentication.
+**Backend:**
+- Node.js
+- Express.js
 
--Cloudinary for image storage.
+**Database:**
+- MongoDB
+- Mongoose
 
--Mapbox for interactive maps.
+**Authentication & Sessions:**
+- Passport.js (Local Strategy)
+- Express-Session
+- Connect-Mongo
 
--Connect Flash for flash messages.
+**Image Handling:**
+- Multer (for file uploads)
+- Cloudinary (for image storage)
 
--Connect Mongo for session storage.
+**Other Tools:**
+- Dotenv
+- Cookie-Parser
+- Connect-Flash (for alerts & messages)
+- Mapbox (for interactive maps)
 
--Cookie Parser for handling cookies.
+---
 
--Dotenv for managing environment variables.
+## ✨ Features
 
--EJS for template rendering.
+- 🔐 User Registration & Login with password hashing (Passport.js)
+- 🧭 Location-based Listings with Mapbox
+- 🖼️ Secure Image Uploads via Cloudinary
+- 📝 Add, Edit, and Delete Listings
+- 💬 Flash messages for success and error feedback
+- 📱 Fully responsive UI with mobile support
 
--Express Session for session management.
+---
 
--Joi for data validation.
+## 🧑‍💻 Getting Started
 
--Mongoose for MongoDB object modeling.
-
--Multer for file uploads.
-
--Passport Local for local authentication.
-
--Passport Local Mongoose for Mongoose-specific authentication.
-
-# ⭐ Key Features:
-
--Model-View-Controller (MVC) framework
-
--User Authentication: Login, logout, and user profile management
-
--CRUD Operations: Add, edit, and delete listings
-
--Review System: Users can add and delete reviews
-
--Account Management: Update user details and passwords
-
--Data Security: Secure password hashing and encryption
-
--Interactive Maps: Mapbox integration for location visualization
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Indrayudh-Dhara/Wanderlustt.git
+cd Wanderlustt
