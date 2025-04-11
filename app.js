@@ -111,7 +111,7 @@ app.use("/",userRouter);
 
 
 app.all("*", async (req,res)=>{
-        const allListings = await Listing.find({});
+        const allListings = await Listing.find({}).limit(12);
         res.render("listings/index.ejs", {allListings});
 });
 
