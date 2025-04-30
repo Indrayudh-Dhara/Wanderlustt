@@ -1,13 +1,11 @@
 # 🏡 Wanderlust – Airbnb-Inspired Full-Stack Web App
+[![Live Demo](https://img.shields.io/badge/Render-Live_Demo-%2346E3B7?logo=render)](https://wanderlustt-ziz3.onrender.com)  > ⚠️ First-time load might take a few seconds due to Render’s free-tier cold start.
 
 Wanderlust is a full-stack web application inspired by Airbnb, built using the MERN stack. It allows users to explore, create, and manage listings for rental properties. The app features user authentication, image uploads, interactive maps, and a responsive UI — all designed to deliver a smooth and intuitive user experience.
 
-## 🚀 Live Demo
-[🌐 Deployed on Render](https://wanderlustt-ziz3.onrender.com)
-
-> ⚠️ First-time load might take a few seconds due to Render’s free-tier cold start.
-
 ---
+
+![Demo Screenshot](./public/Screenshot.png)
 
 ## 🛠️ Tech Stack
 
