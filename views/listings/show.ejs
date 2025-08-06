@@ -54,20 +54,31 @@
 
 
 <body>
-    <div class="row mt-3 mb-5">
-        <div class="col-8 offset-3">
+    <div class="row mt-4 mb-5">
+        <div class="col-8 offset-1">
     <h3> <b><%= listing.title %></b></h3>
 </div>
 
-    <div class="card listing-card col-6 offset-3 show-card" >
+    <div class="card listing-card col-10 offset-1 show-card" >
         <img src="<%= listing.image.url%>" class="card-img-top show-img " alt="listing_image">
         <div class="card-body">
           
-            <p class="card-text">Owned by : <%= listing.owner.username %></p>
-            <p class="card-text"><%= listing.description %></p>
-            <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN")%></p>
-            <p class="card-text"><%= listing.location%></p>
-            <p class="card-text"><%= listing.country%></p>
+            <p class="card-text fw-bold fs-8">Owned by : <%= listing.owner.username %></p>
+            <br>
+            <hr>
+            <br>
+            <p class="card-text fs-5"><%= listing.description %></p>
+            <br>
+            <br>
+            <div class="shadow-lg" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; border: 2px solid inherit  ; border-radius: 2rem; height: 200px; width: 200px;">
+             <div style="background-color: #fe424d; color: white;border-radius: 2rem ; width: 160px;  text-align: center; "><p class="" style="">&#8377; <%= listing.price.toLocaleString("en-IN")%></p></div>
+              
+             <div>
+             
+              <p class="card-text fw-bold"><%= listing.location%></p> <hr></div> 
+            <div><p class="card-text"><%= listing.country%></p>
+            </div>
+            </div>
         </div>
       </div>
       <br>
@@ -80,8 +91,10 @@
         </form>
     </div>
     <!-- <% } %> -->
-    <div class="col-8 offset-3 mb-3">
+    <div class="col-8 offset-2 mb-3">
+      <br><br>
         <hr>
+        <br>
         <h4>Leave a Review</h4>
         <form action="/listings/<%=listing._id %>/reviews" method="post" novalidate class="needs-validation">
             <div class="mb-3 mt-3">

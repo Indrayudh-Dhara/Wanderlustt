@@ -147,10 +147,10 @@
                 
                 <!-- Search form with properly positioned button -->
                 <div class="d-flex flex-grow-1 mx-md-3 mx-lg-4">
-                    <form class="search-container w-100" role="search">
+                    <form class="search-container w-100" role="search" method="GET" action="/listings" >
                         <div class="search-input-container offset-xxl-8">
-                            <input class="form-control search-input" type="search" placeholder="Search countries" aria-label="Search">
-                            <button class="search-btn" type="submit">
+                            <input class="form-control search-input" name="country" placeholder="Search countries" aria-label="Search">
+                            <button class="search-btn"  type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>

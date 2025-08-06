@@ -5,8 +5,18 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const geocodingClient = mbxGeocoding({ accessToken: mapToken});
 
 module.exports.index = async (req,res)=>{
-    const allListings = await Listing.find({});
-    res.render("listings/index.ejs", {allListings});
+     const { country } = req.query;
+
+    let allListings;
+    if (country && country.trim() !== "") {
+        allListings = await Listing.find({
+            country: { $regex: new RegExp(country, "i") } // Case-insensitive search
+        });
+    } else {
+        allListings = await Listing.find({});
+    }
+
+    res.render("listings/index.ejs", { allListings });
  }
 
 
